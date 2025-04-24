@@ -1,0 +1,38 @@
+# === General ===
+.DS_Store
+Thumbs.db
+*.log
+*.env
+*.env.local
+*.env.development
+*.env.production
+
+# === Node Modules ===
+node_modules/
+my-portfolio/node_modules/
+my-portfolio-cms/node_modules/
+
+# === npm Lockfile (only keep one if using npm consistently)
+yarn.lock
+pnpm-lock.yaml
+
+# === Build Output ===
+my-portfolio/build/
+my-portfolio/dist/
+my-portfolio/.next/
+my-portfolio/out/
+
+# === Sanity CMS ===
+my-portfolio-cms/.sanity/
+my-portfolio-cms/dist/
+my-portfolio-cms/.env
+my-portfolio-cms/sanity.json
+
+# === VS Code ===
+.vscode/
+
+# === OS / Editor Junk ===
+*.swp
+*.swo
+*.bak
+*.tmp
