@@ -15,7 +15,7 @@ import ROUTES from "./constants/routes/routes";
 
 function App() {
 	return (
-		<div className='grid grid-cols-12 min-h-screen bg-slate-600'>
+		<div className='grid grid-cols-12 min-h-screen'>
 			<div className='grid col-span-1'>
 				<Sidebar>
 					<SidebarLink
@@ -46,7 +46,7 @@ function App() {
 				</Sidebar>
 			</div>
 
-			<main className='grid col-span-11 p-8'>
+			<main className='grid col-span-11'>
 				<Routes>
 					{ROUTES.map((route) => (
 						<Route path={route.path} element={route.element} />

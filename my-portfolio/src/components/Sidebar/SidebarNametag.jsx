@@ -6,12 +6,12 @@ function SidebarNametag() {
 	const { isExpanded } = useSidebar();
 
 	return (
-		<div>
-			<h1 className='text-white md:text-2xl'>Pablo Galindo</h1>
-			<div className='text-cyan-400 text-sm md:text-lg'>
+		<>
+			<h1 className='text-white text-lg sm:text-2xl'>Pablo Galindo</h1>
+			<div className='text-cyan-300 text-sm md:text-lg'>
 				<AnimatedString input={"Software Developer"} trigger={isExpanded} />
 			</div>
-		</div>
+		</>
 	);
 }
 
