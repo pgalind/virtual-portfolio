@@ -23,20 +23,17 @@ const AboutMe = () => {
 			<h1 className='text-2xl sm:text-2xl text-white font-semibold'>
 				{data.title}
 			</h1>
-			<div className='flex flex-col sm:flex-row items-start sm:gap-6'>
-				<div className='flex'>
-					<img
-						src={urlFor(data.profileImage).quality(100).url()}
-						alt='Profile'
-						className='w-80 object-cover'
-					/>
-				</div>
-
-				<div className='flex flex-1 text-white text-xl'>
+			<div className='flex flex-col my-8 items-center sm:gap-6'>
+				<img
+					src={urlFor(data.profileImage).quality(100).url()}
+					alt='Profile'
+					className='w-80 h-80 object-cover object-top overflow-hidden rounded-full'
+				/>
+				<div className='flex flex-1 text-white text-xl text-justify'>
 					<BlockContent
 						blocks={data?.bio}
-						projectId='q0sz1hm3'
-						dataset='production'
+						projectId={import.meta.env.VITE_SANITY_PROJECT_ID}
+						dataset={import.meta.env.VITE_SANITY_DATASET}
 						serializers={{}}
 					/>
 				</div>
