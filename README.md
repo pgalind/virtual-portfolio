@@ -1,2 +1,12 @@
-# virtual-portfolio
-This repository contains a React project for my professional portfolio (my-portfolio) and its corresponding Sanity Studio project (my-portfolio-cms) to dynamically manage the web app's content.
+# My Portfolio Website
+
+A personal portfolio website built with:
+- 🖥 Frontend: **Vite + React**
+- 🛠 Content Management System (CMS): **Sanity Studio**
+
+This repository contains **two projects**:
+- `/my-portfolio` — the portfolio website
+- `/my-portfolio-cms` — the Sanity CMS to dynamically manage portfolio content
+
+👨‍💻 Author
+Pablo Galindo

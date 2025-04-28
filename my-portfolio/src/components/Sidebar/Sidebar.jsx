@@ -1,6 +1,6 @@
 import React from "react";
 import { useSidebar } from "../../context/SidebarContext";
-import { Lock, LockOpen } from "@phosphor-icons/react";
+import { Lock, LockOpen, List } from "@phosphor-icons/react";
 import SidebarNametag from "./SidebarNametag";
 import SidebarFooter from "./SidebarFooter";
 
@@ -11,8 +11,8 @@ const Sidebar = ({ children }) => {
 		<>
 			{/* Sidebar */}
 			<div
-				className={`flex flex-col py-8 px-4 h-full bg-slate-900 z-40 transition-all duration-300 ease-in-out overflow-hidden text-nowrap ${
-					isExpanded && "absolute top-0 left-0 w-fit sm:w-60 shadow-lg"
+				className={`flex flex-col py-12 px-4 h-full bg-slate-950/10 shadow-2xl shadow-white/60 z-40 transition-all duration-300 ease-in-out overflow-hidden text-nowrap ${
+					isExpanded && "absolute top-0 left-0 w-fit sm:w-60"
 				}`}
 				onMouseEnter={() => {
 					setIsHovered(true);
@@ -24,11 +24,17 @@ const Sidebar = ({ children }) => {
 				{/* Toggle Button */}
 				<button
 					onClick={toggleSidebar}
-					className={`text-slate-700 hover:text-cyan-400 hover:scale-105 ease-in-out ${
+					className={`text-white hover:text-cyan-400 hover:scale-105 ease-in-out ${
 						isExpanded ? "self-end" : "self-center"
 					}`}
 				>
-					{isToggled ? <Lock size={28} /> : <LockOpen size={28} />}
+					{isToggled ? (
+						<Lock size={28} />
+					) : isExpanded ? (
+						<LockOpen size={28} />
+					) : (
+						<List size={28} />
+					)}
 				</button>
 
 				{/* Sidebar Content */}
@@ -38,7 +44,7 @@ const Sidebar = ({ children }) => {
 					}`}
 				>
 					<SidebarNametag />
-					<nav className='flex flex-col flex-1 justify-center'>{children}</nav> 
+					<nav className='flex flex-col flex-1 justify-center'>{children}</nav>
 					<SidebarFooter />
 				</div>
 			</div>

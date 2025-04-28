@@ -19,12 +19,12 @@ const AboutMe = () => {
 	if (!data) return <LoadingAnimation />;
 
 	return (
-		<div className='bg-slate-400 p-12 space-y-8 items-center'>
-			<h1 className='text-2xl sm:text-3xl text-slate-900 font-semibold italic'>
+		<>
+			<h1 className='text-2xl sm:text-2xl text-white font-semibold'>
 				{data.title}
 			</h1>
 			<div className='flex flex-col sm:flex-row items-start sm:gap-6'>
-				<div className='flex bg-green-300'>
+				<div className='flex'>
 					<img
 						src={urlFor(data.profileImage).quality(100).url()}
 						alt='Profile'
@@ -32,7 +32,7 @@ const AboutMe = () => {
 					/>
 				</div>
 
-				<div className='flex flex-1 text-slate-900 text-xl'>
+				<div className='flex flex-1 text-white text-xl'>
 					<BlockContent
 						blocks={data?.bio}
 						projectId='q0sz1hm3'
@@ -41,7 +41,7 @@ const AboutMe = () => {
 					/>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 

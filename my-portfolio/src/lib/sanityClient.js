@@ -2,10 +2,10 @@ import { createClient } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 
 const client = createClient({
-	projectId: "q0sz1hm3", // This is found in `my-portfolio-cms/sanity.config.js`
-	dataset: "production",
+	projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
+	dataset: import.meta.env.VITE_SANITY_DATASET,
 	useCdn: true,
-	apiVersion: "2023-01-01", // optional: lock to a specific API version
+	apiVersion: "2023-01-01",
 });
 
 const builder = imageUrlBuilder(client);
