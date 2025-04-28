@@ -15,11 +15,10 @@ if (!SANITY_STUDIO_DATASET) {
 }
 
 export default defineConfig({
-  projectId: SANITY_STUDIO_PROJECT_ID,
-  dataset: SANITY_STUDIO_DATASET,
   name: 'default',
   title: 'my-portfolio-cms',
-  basePath: '/',
+  projectId: SANITY_STUDIO_PROJECT_ID,
+  dataset: SANITY_STUDIO_DATASET,
 
   plugins: [structureTool(), visionTool()],
 
