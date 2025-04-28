@@ -3,7 +3,7 @@ import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
 
-const {SANITY_STUDIO_PROJECT_ID, SANITY_STUDIO_DATASET} = process.env
+const {SANITY_STUDIO_PROJECT_ID, SANITY_STUDIO_DATASET} = import.meta.env
 
 // Error handling for missing environment variables
 if (!SANITY_STUDIO_PROJECT_ID) {
