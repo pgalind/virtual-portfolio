@@ -31,11 +31,9 @@ import { createContext, useContext, useState } from "react";
 const SidebarContext = createContext();
 
 export function SidebarProvider({ children }) {
-	const [isToggled, setIsToggled] = useState(false); // manual control
-	const [isHovered, setIsHovered] = useState(false); // hover control
+	const [isToggled, setIsToggled] = useState(false);
 
 	const toggleSidebar = () => setIsToggled((prev) => !prev);
-	const isExpanded = isToggled || isHovered;
 
 	return (
 		<SidebarContext.Provider
@@ -43,9 +41,6 @@ export function SidebarProvider({ children }) {
 				isToggled,
 				setIsToggled,
 				toggleSidebar,
-				isHovered,
-				setIsHovered,
-				isExpanded,
 			}}
 		>
 			{children}
