@@ -14,7 +14,7 @@ function App() {
 			<div className='absolute ml-24 bg-cyan-400/20 size-72 rounded-full blur-3xl self-center justify-center z-10'></div>
 			<Sidebar />
 			<main
-				className={`ml-24 pt-16 pb-0 px-24 z-20 overflow-y-scroll ${
+				className={`ml-24 py-8 px-12 z-20 overflow-y-scroll ${
 					isToggled && "blur-3xl pointer-events-none"
 				}`}
 			>

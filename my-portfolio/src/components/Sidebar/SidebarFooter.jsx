@@ -7,7 +7,7 @@ const SidebarFooter = () => {
 	const { isToggled } = useSidebar();
 	return (
 		<div
-			className={`flex space-x-2 w-full font-light ${
+			className={`flex space-x-2 w-full font-light hover:font-normal ${
 				isToggled ? "opacity-100" : "opacity-0 pointer-events-none"
 			}`}
 		>

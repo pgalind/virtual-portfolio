@@ -23,13 +23,13 @@ const AboutMe = () => {
 			<h1 className='mb-12 text-xl sm:text-2xl text-white font-medium capitalize'>
 				{data.title}
 			</h1>
-			<div className='flex flex-col sm:w-2/3 md:w-1/2 my-4 space-y-8 items-center mx-auto'>
+			<div className='flex flex-col md:w-2/3 my-4 space-y-8 items-center mx-auto'>
 				<img
 					src={urlFor(data.profileImage).quality(100).url()}
 					alt='Profile'
-					className='size-40 sm:size-64 object-cover object-top overflow-hidden rounded-full'
+					className='size-40 sm:size-52 md:size-64 object-cover object-top overflow-hidden rounded-full border-white border-4 border-solid'
 				/>
-				<div className='flex flex-1 text-white text-sm sm:text-xl font-light'>
+				<div className='flex flex-1 text-white sm:text-lg font-light'>
 					<BlockContent
 						blocks={data?.bio}
 						projectId={import.meta.env.VITE_SANITY_PROJECT_ID}
