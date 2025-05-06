@@ -11,7 +11,7 @@
 	},
 	"dependencies": {
 		"@phosphor-icons/react": "^2.1.7",
-		"@sanity/block-content-to-react": "^3.0.0",
+		"@portabletext/react": "^3.2.1",
 		"@sanity/client": "^6.29.0",
 		"@sanity/image-url": "^1.1.0",
 		"react": "^19.0.0",
