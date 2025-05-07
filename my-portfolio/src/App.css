@@ -14,3 +14,7 @@
 	height: 1.25rem;
 	animation: blink 0.5s step-start infinite;
 }
+
+.custom-clip {
+  clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+}

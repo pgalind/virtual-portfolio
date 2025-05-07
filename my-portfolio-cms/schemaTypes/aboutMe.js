@@ -1,21 +1,11 @@
-export default {
+import {defineType, defineField} from 'sanity'
+
+const aboutMe = defineType({
   name: 'aboutMe', // name of the schema
   title: 'About Me',
   type: 'document',
   fields: [
-    {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-      description: 'The title for the About Me section',
-    },
-    {
-      name: 'bio',
-      title: 'Biography',
-      type: 'blockContent',
-      description: 'A short biography or introduction.',
-    },
-    {
+    defineField({
       name: 'profileImage',
       title: 'Profile Image',
       type: 'image',
@@ -23,6 +13,27 @@ export default {
         hotspot: true,
       },
       description: 'Your profile image for the About Me page',
-    },
+    }),
+    defineField({
+      name: 'bio',
+      title: 'Bio',
+      type: 'blockContent',
+      description: 'A short biography or introduction.',
+    }),
   ],
-}
+  preview: {
+    select: {
+      title: 'bio.0.children.0.text', // grabs the first text block in bio
+      media: 'profileImage',
+    },
+    prepare(selection) {
+      const {title, media} = selection
+      return {
+        title: title || 'About Me',
+        media,
+      }
+    },
+  },
+})
+
+export default aboutMe

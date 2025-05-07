@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import client, { urlFor } from "../lib/sanityClient";
 import LoadingAnimation from "../components/LoadingAnimation";
 import UnderConstructionBanner from "../components/UnderConstructionBanner";
+import CustomPortableText from "../components/PortableText";
 
 const Experience = () => {
 	const [data, setData] = useState(null);
@@ -25,11 +26,18 @@ const Experience = () => {
 
 	return (
 		<>
-			<h1 className='mb-8 text-xl sm:text-2xl text-white font-light capitalize underline-offset-8'>
-				// data.title
-			</h1>
-			<div className='flex flex-col md:w-2/3 items-center mx-auto space-y-8'>
-				// data.experience
+			<div className='bg-white flex flex-col p-8 shadow-md min-w-96'>
+				<h2>{data.position}</h2>
+				<p>{data.company}</p>
+				<span>
+					{data.dateFrom} - {data.dateTo}
+				</span>
+				<CustomPortableText value={data.description} />
+				<img
+					src={urlFor(data.image).quality(100).url()}
+					alt='Company Logo'
+					className='w-40'
+				/>
 			</div>
 		</>
 	);

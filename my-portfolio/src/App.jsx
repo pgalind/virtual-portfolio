@@ -10,18 +10,34 @@ function App() {
 	const { isToggled } = useSidebar();
 
 	return (
-		<div className='relative flex min-h-screen overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-950'>
-			<aside className='flex w-24 z-40 overflow-y-scroll'>
+		<div className='relative flex min-h-screen overflow-hidden bg-gradient-to-r from-gray-950 via-black to-gray-950'>
+			<aside className='flex w-20 z-40 overflow-y-scroll'>
 				<Sidebar />
 			</aside>
 			<main
-				className={`flex flex-col flex-1 z-20 pb-12 overflow-y-scroll ${
-					isToggled && "blur-3xl pointer-events-none"
+				className={`flex flex-col flex-1 z-20 overflow-y-scroll ${
+					isToggled && "blur-2xl pointer-events-none"
 				}`}
 			>
+				{/* Top Blur Overlay */}
+				<div className='pointer-events-none fixed top-0 left-0 w-full h-16 z-30 bg-gradient-to-b from-gray-950 to-transparent backdrop-blur-2xl' />
+
 				<Routes>
 					{ROUTES.map((route) => (
-						<Route path={route.path} element={route.element} />
+						<Route
+							key={route.path}
+							path={route.path}
+							element={
+								<>
+									<span className='fixed z-40 mt-8 pl-10 pr-8 py-1 w-fit text-base md:text-lg text-white font-light italic self-end bg-pink-600 custom-clip outline'>
+										{route.heading}
+									</span>
+									<div className='flex flex-col px-8 pt-16 pb-8 md:w-4/5 lg:w-3/5 items-center mx-auto'>
+										{route.element}
+									</div>
+								</>
+							}
+						/>
 					))}
 				</Routes>
 			</main>

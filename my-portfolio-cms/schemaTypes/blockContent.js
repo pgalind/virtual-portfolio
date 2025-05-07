@@ -1,4 +1,6 @@
-export default {
+import {defineType} from 'sanity'
+
+const blockContent = defineType({
   name: 'blockContent',
   title: 'Block Content',
   type: 'array',
@@ -8,4 +10,6 @@ export default {
     },
     // You can add other types here, such as image types
   ],
-}
+})
+
+export default blockContent

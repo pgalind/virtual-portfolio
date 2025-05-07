@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import client, { urlFor } from "../lib/sanityClient";
 import {
+	Download,
 	EnvelopeSimple,
 	GithubLogo,
 	LinkedinLogo,
@@ -32,35 +33,36 @@ const AboutMe = () => {
 
 	return (
 		<>
-			<h1 className='m-8 text-xl sm:text-2xl text-white font-light'>
-				{data.title}
-			</h1>
-			<div className='flex flex-col md:w-2/3 items-center mx-auto px-8 shadow-md'>
-				<img
-					src={urlFor(data.profileImage).quality(100).url()}
-					alt='Profile Image'
-					className='size-40 sm:size-52 md:size-64 object-cover object-top overflow-hidden rounded-full border-white border-2 border-solid'
+			<img
+				src={urlFor(data.profileImage).quality(100).url()}
+				alt='Profile Image'
+				className='my-4 size-40 md:size-52 md:size-64 object-cover object-top overflow-hidden rounded-full border-white border-2 border-solid'
+			/>
+			<div className='flex flex-col flex-1'>
+				<CustomPortableText value={data.bio} />
+			</div>
+			<div className='flex w-full justify-evenly my-8'>
+				<SocialLink
+					url='https://www.github.com/pgalind'
+					icon={<GithubLogo size={28} />}
+					label='Github'
 				/>
-				<div className='flex flex-col flex-1'>
-					<CustomPortableText value={data.bio} />
-				</div>
-				<div className='flex w-full justify-evenly'>
-					<SocialLink
-						url='https://www.github.com/pgalind'
-						icon={<GithubLogo size={28} />}
-						label='Github'
-					/>
-					<SocialLink
-						url='https://www.linkedin.com/in/pgalind'
-						icon={<LinkedinLogo size={28} />}
-						label='LinkedIn'
-					/>
-					<SocialLink
-						url='mailto:pablogalindo864@gmail.com'
-						icon={<EnvelopeSimple size={28} />}
-						label='Email'
-					/>
-				</div>
+				<SocialLink
+					url='https://www.linkedin.com/in/pgalind'
+					icon={<LinkedinLogo size={28} />}
+					label='LinkedIn'
+				/>
+				<SocialLink
+					url='mailto:pablogalindo864@gmail.com'
+					icon={<EnvelopeSimple size={28} />}
+					label='Email'
+				/>
+				<SocialLink
+					url='/Galindo_Resume.pdf'
+					download
+					icon={<Download size={28} />}
+					label='Resume'
+				/>
 			</div>
 		</>
 	);

@@ -8,22 +8,27 @@ import Certifications from "../../pages/Certifications";
 const ROUTES = [
 	{
 		path: "/",
+		heading: "About Me",
 		element: <AboutMe />,
 	},
 	{
 		path: "/skills",
+		heading: "Skills",
 		element: <Skills />,
 	},
 	{
 		path: "/experience",
+		heading: "Experience",
 		element: <Experience />,
 	},
 	{
 		path: "/projects",
+		heading: "Projects",
 		element: <Projects />,
 	},
 	{
 		path: "/certifications",
+		heading: "Certifications",
 		element: <Certifications />,
 	},
 ];

@@ -19,7 +19,7 @@ const Sidebar = () => {
 
 	return (
 		<div
-			className={`fixed left-0 top-0 flex flex-col h-full py-4 shadow-2xl shadow-cyan-400/20 transition-all duration-300 ease-in-out overflow-hidden text-nowrap ${
+			className={`fixed left-0 top-0 flex flex-col h-full py-4 shadow-2xl shadow-cyan-400/30 transition-all duration-300 ease-in-out overflow-hidden text-nowrap bg-gray-950 ${
 				isToggled ? "w-64" : "w-20"
 			}`}
 		>
