@@ -18,9 +18,9 @@ const Sidebar = () => {
 	const { isToggled, toggleSidebar } = useSidebar();
 
 	return (
-		<aside
-			className={`fixed top-0 left-0 flex flex-col py-4 h-full shadow-2xl shadow-cyan-400/40 z-40 transition-all duration-300 ease-in-out overflow-hidden overflow-y-scroll text-nowrap ${
-				isToggled ? "w-56 sm:w-64" : "w-24"
+		<div
+			className={`fixed left-0 top-0 flex flex-col h-full py-4 shadow-2xl shadow-cyan-400/20 transition-all duration-300 ease-in-out overflow-hidden text-nowrap ${
+				isToggled ? "w-64" : "w-20"
 			}`}
 		>
 			{/* Toggle Button */}
@@ -34,16 +34,13 @@ const Sidebar = () => {
 			</button>
 
 			{/* Sidebar Content */}
-			<div
-				className='flex flex-col flex-1 space-y-4 my-4 justify-between'
-			>
+			<div className='flex flex-col flex-1 space-y-4 my-4 justify-between'>
 				<SidebarHeader />
 				<nav className='space-y-2'>
 					<SidebarLink
 						to='/'
 						icon={<Student size={28} weight='duotone' />}
 						label='About Me'
-						active={true}
 					/>
 					<SidebarLink
 						to='/experience'
@@ -68,7 +65,7 @@ const Sidebar = () => {
 				</nav>
 				<SidebarFooter />
 			</div>
-		</aside>
+		</div>
 	);
 };
 

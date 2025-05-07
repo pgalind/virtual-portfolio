@@ -7,8 +7,8 @@ function SidebarHeader() {
 
 	return (
 		<div
-			className={`mx-8 flex flex-col ${
-				!isToggled && "text-center"
+			className={`flex flex-col ${
+				isToggled ? "px-8" : "text-center"
 			}`}
 		>
 			<h1

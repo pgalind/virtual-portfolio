@@ -10,11 +10,12 @@ function App() {
 	const { isToggled } = useSidebar();
 
 	return (
-		<div className='flex min-h-screen overflow-hidden justify-center bg-gradient-to-br from-gray-900 via-black to-gray-950'>
-			<div className='absolute ml-24 bg-cyan-400/20 size-72 rounded-full blur-3xl self-center justify-center z-10'></div>
-			<Sidebar />
+		<div className='relative flex min-h-screen overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-950'>
+			<aside className='flex w-24 z-40 overflow-y-scroll'>
+				<Sidebar />
+			</aside>
 			<main
-				className={`ml-24 py-8 px-12 z-20 overflow-y-scroll ${
+				className={`flex flex-col flex-1 z-20 pb-12 overflow-y-scroll ${
 					isToggled && "blur-3xl pointer-events-none"
 				}`}
 			>
