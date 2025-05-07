@@ -11,7 +11,7 @@ function App() {
 
 	return (
 		<div className='relative flex min-h-screen overflow-hidden bg-gradient-to-r from-gray-950 via-black to-gray-950'>
-			<aside className='flex w-20 z-40 overflow-y-scroll'>
+			<aside className='flex w-20 z-40'>
 				<Sidebar />
 			</aside>
 			<main
