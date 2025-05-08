@@ -36,12 +36,12 @@ const AboutMe = () => {
 			<img
 				src={urlFor(data.profileImage).quality(100).url()}
 				alt='Profile Image'
-				className='my-4 size-40 md:size-52 md:size-64 object-cover object-top overflow-hidden rounded-full border-white border-2 border-solid'
+				className='my-4 size-48 sm:size-52 md:size-60 lg:size-64 object-cover object-top overflow-hidden rounded-full border-white border-2 border-solid'
 			/>
 			<div className='flex flex-col flex-1'>
 				<CustomPortableText value={data.bio} />
 			</div>
-			<div className='flex w-full justify-evenly my-8'>
+			<div className='flex w-full justify-evenly my-4'>
 				<SocialLink
 					url='https://www.github.com/pgalind'
 					icon={<GithubLogo size={28} />}

@@ -15,7 +15,7 @@ function App() {
 				<Sidebar />
 			</aside>
 			<main
-				className={`flex flex-col flex-1 z-20 overflow-y-scroll ${
+				className={`flex flex-col flex-1 z-20 ${
 					isToggled && "blur-2xl pointer-events-none"
 				}`}
 			>
@@ -29,10 +29,10 @@ function App() {
 							path={route.path}
 							element={
 								<>
-									<span className='fixed z-40 mt-8 pl-10 pr-8 py-1 w-fit text-base md:text-lg text-white font-light italic self-end bg-pink-600 custom-clip outline'>
+									<span className='fixed z-30 mt-7 pl-10 pr-8 py-1 w-fit text-sm sm:text-base md:text-lg text-white font-light italic self-end bg-pink-600 custom-clip'>
 										{route.heading}
 									</span>
-									<div className='flex flex-col px-8 pt-16 pb-8 md:w-4/5 lg:w-3/5 items-center mx-auto'>
+									<div className='flex flex-col h-full px-8 pt-16 pb-8 sm:w-[90%] md:w-3/4 lg:w-3/5 items-center mx-auto'>
 										{route.element}
 									</div>
 								</>

@@ -26,17 +26,12 @@ const Experience = () => {
 
 	return (
 		<>
-			<div className='bg-white flex flex-col p-8 shadow-md min-w-96'>
-				<h2>{data.position}</h2>
-				<p>{data.company}</p>
-				<span>
-					{data.dateFrom} - {data.dateTo}
-				</span>
+			<div className='flex flex-col p-8 border-2 border-cyan-400 rounded-lg'>
 				<CustomPortableText value={data.description} />
 				<img
 					src={urlFor(data.image).quality(100).url()}
 					alt='Company Logo'
-					className='w-40'
+					className='w-40 self-center'
 				/>
 			</div>
 		</>

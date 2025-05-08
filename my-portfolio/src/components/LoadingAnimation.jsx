@@ -2,7 +2,7 @@ import React from "react";
 
 const LoadingAnimation = () => {
 	return (
-		<div className='h-full mx-auto flex items-center justify-center space-x-1 text-cyan-400 font-bold text-xl md:text-3xl'>
+		<div className='h-full flex flex-1 items-center justify-center mx-auto space-x-1 text-cyan-400 font-bold text-lg sm:text-xl md:text-2xl'>
 			<span className='animate-bounce [animation-delay:0s]'>.</span>
 			<span className='animate-bounce [animation-delay:0.25s]'>.</span>
 			<span className='animate-bounce [animation-delay:0.5s]'>.</span>
