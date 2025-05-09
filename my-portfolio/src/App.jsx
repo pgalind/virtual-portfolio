@@ -1,43 +1,35 @@
 import React from "react";
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import PageHeader from "./components/PageHeader";
 import Sidebar from "./components/Sidebar/Sidebar";
 import { useSidebar } from "./context/SidebarContext";
-
+import { Routes, Route } from "react-router-dom";
 import ROUTES from "./constants/routes/routes";
+import SidebarToggleBtn from "./components/SidebarToggleBtn";
 
 function App() {
-	const { isToggled } = useSidebar();
-
+	const { isToggled, toggleSidebar } = useSidebar();
 	return (
-		<div className='relative flex min-h-screen overflow-hidden bg-gradient-to-r from-gray-950 via-black to-gray-950'>
-			<aside className='flex w-20 z-40'>
+		<div className='relative flex min-h-screen bg-gradient-to-r from-gray-950 via-black to-gray-950 overflow-hidden'>
+			<PageHeader />
+			<SidebarToggleBtn />
+
+			<aside>
 				<Sidebar />
 			</aside>
-			<main
-				className={`flex flex-col flex-1 z-20 ${
-					isToggled && "blur-2xl pointer-events-none"
-				}`}
-			>
-				{/* Top Blur Overlay */}
-				<div className='pointer-events-none fixed top-0 left-0 w-full h-16 z-30 bg-gradient-to-b from-gray-950 to-transparent backdrop-blur-2xl' />
 
+			{/* Overlay */}
+			{isToggled && (
+				<div
+					className='fixed inset-0 backdrop-blur-2xl z-30'
+					onClick={toggleSidebar}
+				/>
+			)}
+
+			<main className='flex-1 mx-8 sm:mx-0 sm:pl-20 py-16 overflow-auto'>
 				<Routes>
 					{ROUTES.map((route) => (
-						<Route
-							key={route.path}
-							path={route.path}
-							element={
-								<>
-									<span className='fixed z-30 mt-7 pl-10 pr-8 py-1 w-fit text-sm sm:text-base md:text-lg text-white font-light italic self-end bg-pink-600 custom-clip'>
-										{route.heading}
-									</span>
-									<div className='flex flex-col h-full px-8 pt-16 pb-8 sm:w-[90%] md:w-3/4 lg:w-3/5 items-center mx-auto'>
-										{route.element}
-									</div>
-								</>
-							}
-						/>
+						<Route key={route.path} path={route.path} element={route.element} />
 					))}
 				</Routes>
 			</main>

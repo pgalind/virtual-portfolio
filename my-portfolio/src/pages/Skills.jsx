@@ -10,7 +10,7 @@ const Skills = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			setIsLoading(true);
-			const query = '*[_type == "experience"][0]';
+			const query = '*[_type == "skills"][0]';
 			const result = await client.fetch(query);
 			console.log("Sanity Result:", result); // <- For debugging
 			setData(result);

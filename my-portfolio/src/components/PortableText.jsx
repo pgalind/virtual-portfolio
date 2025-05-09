@@ -48,6 +48,9 @@ const components = {
 				{children}
 			</a>
 		),
+		strong: ({ children }) => (
+			<strong className="font-semibold text-pink-600">{children}</strong>
+		),
 	},
 	list: {
 		bullet: ({ children }) => <ul className='list-disc ml-4'>{children}</ul>,

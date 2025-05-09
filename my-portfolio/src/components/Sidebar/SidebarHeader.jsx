@@ -8,14 +8,14 @@ function SidebarHeader() {
 	return (
 		<div className={`flex flex-col ${isToggled ? "px-8" : "text-center"}`}>
 			<h1
-				className={`font-light text-lg md:text-xl ${
+				className={`font-light text-lg sm:text-xl ${
 					isToggled ? "text-white" : "text-cyan-400"
 				}`}
 			>
 				{isToggled ? "Pablo Galindo" : "PG"}
 			</h1>
 			<span
-				className={`text-cyan-400 md:text-lg ${
+				className={`text-cyan-400 sm:text-lg ${
 					isToggled ? "opacity-100" : "opacity-0 pointer-events-none"
 				}`}
 			>

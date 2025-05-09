@@ -32,16 +32,17 @@ const AboutMe = () => {
 	if (!data) return <UnderConstructionBanner />;
 
 	return (
-		<>
-			<img
-				src={urlFor(data.profileImage).quality(100).url()}
-				alt='Profile Image'
-				className='my-4 size-48 sm:size-52 md:size-60 lg:size-64 object-cover object-top overflow-hidden rounded-full border-white border-2 border-solid'
-			/>
-			<div className='flex flex-col flex-1'>
-				<CustomPortableText value={data.bio} />
+		<div className='flex flex-col mx-auto sm:w-4/5 md:w-3/4 lg:w-2/3 p-8 rounded-xl'>
+			<div className='self-center inline-block p-2 border-2 border-cyan-400 rounded-full mb-8'>
+				<img
+					src={urlFor(data.profileImage).quality(100).url()}
+					alt='Profile Image'
+					className='w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60 object-cover rounded-full'
+				/>
 			</div>
-			<div className='flex w-full justify-evenly my-4'>
+
+			<CustomPortableText value={data.bio} />
+			<div className='flex w-full flex-wrap justify-evenly gap-2'>
 				<SocialLink
 					url='https://www.github.com/pgalind'
 					icon={<GithubLogo size={28} />}
@@ -64,7 +65,7 @@ const AboutMe = () => {
 					label='Resume'
 				/>
 			</div>
-		</>
+		</div>
 	);
 };
 
