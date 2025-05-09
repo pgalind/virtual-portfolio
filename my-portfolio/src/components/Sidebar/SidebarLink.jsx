@@ -8,7 +8,7 @@ const SidebarLink = ({ to, icon, label }) => {
 	return (
 		<NavLink
 			to={to}
-			className={`flex md:text-lg py-4 ${
+			className={`flex sm:text-lg py-4 ${
 				isToggled ? "justify-start px-8" : "justify-center"
 			} text-white font-light hover:font-normal hover:text-slate-900 hover:bg-cyan-400 hover:scale-105 active:bg-pink-600 active:text-white ease-in-out transition-transform cursor-pointer`}
 			onClick={isToggled && toggleSidebar}

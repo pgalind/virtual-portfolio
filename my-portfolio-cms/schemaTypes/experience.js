@@ -22,7 +22,7 @@ const experience = defineType({
     }),
     defineField({
       name: 'dateTo',
-      title: 'From (mm/yyyy)',
+      title: 'To (mm/yyyy)',
       type: 'datetime',
       initialValue: () => new Date().toISOString(),
     }),
