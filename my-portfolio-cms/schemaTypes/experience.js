@@ -6,8 +6,8 @@ const experience = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'position',
-      title: 'Position or Role',
+      name: 'role',
+      title: 'Role',
       type: 'string',
     }),
     defineField({
@@ -16,13 +16,13 @@ const experience = defineType({
       type: 'string',
     }),
     defineField({
-      name: 'dateFrom',
-      title: 'From (mm/yyyy)',
+      name: 'startDate',
+      title: 'Start Date (mm/yyyy)',
       type: 'datetime',
     }),
     defineField({
-      name: 'dateTo',
-      title: 'To (mm/yyyy)',
+      name: 'endDate',
+      title: 'End Date (mm/yyyy)',
       type: 'datetime',
       initialValue: () => new Date().toISOString(),
     }),
@@ -36,7 +36,7 @@ const experience = defineType({
       name: 'description',
       title: 'Description',
       type: 'blockContent',
-      description: '3-6 bullet points describing responsibilities and/or achievements',
+      description: '3-6 bullet points highlighting responsibilities/achievements',
     }),
   ],
 })
