@@ -1,5 +1,4 @@
 export const ToMMYYYYFormat = (datetimeStr) => {
-	console.log(datetimeStr);
 	const date = new Date(datetimeStr); // Convert ISO string (2025-02-28T19:02:00.000Z) to Date
 	if (isNaN(date)) throw new Error("Invalid date format from Sanity");
 

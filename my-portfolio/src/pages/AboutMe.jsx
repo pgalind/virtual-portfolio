@@ -32,7 +32,7 @@ const AboutMe = () => {
 	if (!data) return <UnderConstructionBanner />;
 
 	return (
-		<div className='flex flex-col mx-auto sm:w-4/5 md:w-3/4 lg:w-2/3 p-8 rounded-xl'>
+		!isLoading && <div className='flex flex-col mx-auto sm:w-4/5 md:w-3/4 lg:w-2/3 p-8 rounded-xl'>
 			<div className='self-center inline-block p-2 border-2 border-cyan-400 rounded-full mb-8'>
 				<img
 					src={urlFor(data.profileImage).quality(100).url()}
